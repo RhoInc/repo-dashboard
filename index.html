@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rho Graphics</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="./img/favicon.ico">
+        <script src='https://d3js.org/d3.v3.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js'></script>
+        <script src='https://rawgit.com/RhoInc/Webcharts/master/build/webcharts.js'></script>
+        <link rel="stylesheet" href="https://rawgit.com/RhoInc/Webcharts/master/css/webcharts.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./main.css">
+    </head>
+
+    <body>
+
+
+        <!-- Header -->
+        <header class="w3-container rho-blue w3-center">
+            <h1 class="w3-margin w3-jumbo"></h1>
+        </header>
+
+        <!-- Table -->
+        <div class="w3-row-padding w3-padding-16 w3-container" style="position:relative">
+            <div style="" class="w3-content">
+                <div class="w3-twothird">
+                    <h1>Graphics Repository Dashboard</h1>
+                    <h5></h5>
+                </div>
+            </div>
+        </div>
+
+
+
+<!-- Latest Releases -->
+        <div class="w3-row-padding w3-padding-16 w3-container">
+            <div class="w3-content">
+                <div class="w3-twothird">
+                    <h2>Latest Releases</h2>
+                    <div class="w3-third w3-center"></div>
+                </div>
+
+                <div class = 'w3-twothird releases'></div>
+            </div>
+        </div>
+
+          <footer class="w3-container w3-padding-16 w3-center w3-opacity">
+                <div class="w3-xlarge w3-padding-16">
+                    <a href = 'https://www.facebook.com/Rho-447248761980030/'><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+                    <a href = 'https://www.instagram.com/rhoworld/'><i class="fa fa-instagram w3-hover-opacity"></i></a>
+                    <a href = 'https://twitter.com/rhoworld/'><i class="fa fa-twitter w3-hover-opacity"></i></a>
+                    <a href = 'https://www.linkedin.com/company/rho/'><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+                </div>
+                <div class="footer">
+                    <p><i class="fa fa-envelope-o"></i> <a href="mailto:graphics@rhoworld.com"><span>graphics@rhoworld.com</span></a></p>
+                    <p>&#169; <a href="http://www.rhoworld.com">Rho, Inc.</a> 2016-2019. <a href="http://www.rhoworld.com/rho/terms-conditions">Terms and Conditions</a></p>
+                </div>
+            </footer>
+    
+
+        <script>
+
+          d3.json('./data/lastUpdate.json',function(error,json){
+              d3.select("footer").append("p").text("Last Update: "+json.date)
+          })
+          
+        </script>
+        <script src = './index.js'></script>
+    </body>
+</html>
